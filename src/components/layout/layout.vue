@@ -32,7 +32,7 @@
             margin: 0,
             minHeight: '280px',
             maxHeight: '100vh',
-            overflow: 'hidden auto'
+            overflow: 'hidden auto',
           }"
         >
           <RouterView />
@@ -59,6 +59,16 @@ const menus = ref([
         title: "table-form",
         path: "/table-form",
         key: "table-form",
+      },
+      {
+        title: "chart1",
+        path: "chart-page1",
+        key: "chart-page1",
+      },
+      {
+        title: "amap",
+        path: "amap-page1",
+        key: "amap-page1",
       },
     ],
     path: "/table-form",

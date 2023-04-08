@@ -21,6 +21,16 @@ const routes: RouteRecordRaw[] = [
         name: "table-form",
         component: () => import("./pages/tableForm/tableForm.vue"),
       },
+      {
+        path: "/chart-page1",
+        name: "chart-page1",
+        component: () => import("./pages/chart/chart1.vue"),
+      },
+      {
+        path: "/amap-page1",
+        name: "amap-page1",
+        component: () => import("./pages/amap/amap.vue"),
+      },
     ],
   },
 ];
