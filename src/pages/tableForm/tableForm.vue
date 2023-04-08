@@ -1,5 +1,5 @@
 <template>
-  <AddressSelect />
+  <TableHead />
   <a-table
     :columns="columns"
     :data-source="data"
@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import { tableData, columns } from "./data";
 import { reactive, onMounted, ref } from "vue";
-import AddressSelect from "components/select/address.vue"
+import TableHead from './tableHead.vue'
 type tableItem = Partial<typeof tableData[0]>;
 let data: tableItem[] = reactive([]);
 let loading = ref(false);

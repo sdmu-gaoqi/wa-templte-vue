@@ -19,3 +19,7 @@ $mainBgc: #fff2ea;
   background-color: #666;
   border-radius: 10px;
 }
+
+@mixin filterBox {
+  margin-right: 10px;
+}

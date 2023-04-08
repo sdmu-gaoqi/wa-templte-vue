@@ -34,7 +34,7 @@ import {
 } from "vue";
 import { useStore } from "vuex";
 import _ from "lodash";
-import Modal from "./addressModal.vue";
+import Modal from "../modal/addressModal.vue";
 const modalRef = ref<{ show: () => void } | null>(null);
 const value = ref([]);
 const store = useStore();
@@ -61,6 +61,7 @@ onBeforeMount(() => {
   padding: 5px 10px;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
+  @include filterBox;
   .tipText {
     margin-right: 10px;
   }

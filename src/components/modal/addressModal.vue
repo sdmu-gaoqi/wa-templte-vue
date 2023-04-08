@@ -124,7 +124,7 @@ import {
   toRaw,
 } from "vue";
 import { scrollListener } from "./tools";
-import { AddressType } from "./types";
+import { AddressType } from "../select/types";
 type ShowCityItem = addressItem & {
   proviceId?: number;
   cityId?: number;
