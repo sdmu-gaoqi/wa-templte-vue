@@ -1,4 +1,3 @@
-import { getAddressRequest } from "@/servers/addressAxios";
 import { defineComponent } from "vue";
 import { Storage } from "wa-utils";
 const storage = new Storage("local");
@@ -13,7 +12,6 @@ export default defineComponent({
   },
   setup(props) {
     storage.set("name", { content: "world" });
-    getAddressRequest();
     return () => (
       <div>
         <h1>......</h1>
