@@ -1,11 +1,11 @@
-import _ from "lodash";
+import { debounce } from "wa-utils";
 
 export const scrollListener = (callback: (e: string) => void) => {
   const scrollBody = document.querySelector("#addressScroll");
   if (scrollBody) {
     scrollBody.addEventListener(
       "scroll",
-      _.debounce((e) => {
+      debounce((e) => {
         const children = e.target.children;
         const scrollTop = e.target.scrollTop;
         for (let i in children) {
@@ -14,7 +14,7 @@ export const scrollListener = (callback: (e: string) => void) => {
           if (offsetTop + clientHeight - 100 > scrollTop) {
             const id = node?.id?.replace("_box", "");
             callback(id);
-            return
+            return;
           }
         }
       }, 200)

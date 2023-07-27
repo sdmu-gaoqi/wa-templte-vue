@@ -1,4 +1,4 @@
-import { createRouter, RouteRecordRaw, createWebHistory } from "vue-router";
+import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 import Layout from "./components/layout/layout.vue";
 
 const routes: RouteRecordRaw[] = [
@@ -6,6 +6,11 @@ const routes: RouteRecordRaw[] = [
     path: "/login",
     name: "login",
     component: () => import("./pages/login/login.vue"),
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: () => import("./pages/test/test.tsx"),
   },
   {
     path: "",
@@ -42,7 +47,7 @@ const route = createRouter({
 
 route.beforeEach((to, from, next) => {
   const toPath = to.path;
-  if (!["/login"].includes(toPath) && !localStorage.getItem("token")) {
+  if (!["/login", "/test"].includes(toPath) && !localStorage.getItem("token")) {
     next({ path: "/login" });
   }
   next();

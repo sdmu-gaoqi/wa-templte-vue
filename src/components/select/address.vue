@@ -33,8 +33,8 @@ import {
   computed,
 } from "vue";
 import { useStore } from "vuex";
-import _ from "lodash";
 import Modal from "../modal/addressModal.vue";
+import { isEmpty } from "wa-utils";
 const modalRef = ref<{ show: () => void } | null>(null);
 const value = ref([]);
 const store = useStore();
@@ -43,11 +43,11 @@ const address = toRef(addressStore, "address");
 const click = () => {
   modalRef?.value?.show()!;
 };
-const save = (sendValue: any[]) => {
+const save = (sendValue: Record<string, string>[]) => {
   value.value = sendValue;
 };
 onBeforeMount(() => {
-  if (_.isEmpty(address.value)) {
+  if (isEmpty(address.value)) {
     store.dispatch({ type: `address/${GETADDRESS}` });
   }
 });

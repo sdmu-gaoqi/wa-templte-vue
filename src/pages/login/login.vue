@@ -23,10 +23,10 @@
 import { defineComponent, reactive } from "vue";
 import LoginCard from "../../components/loginCard/loginCard.vue";
 import WaInput from "../../components/waInput/waInput.vue";
-import _ from "lodash";
 import { message } from "ant-design-vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import { Storage, isEmpty } from "wa-utils";
 
 export default defineComponent({
   components: {
@@ -34,6 +34,8 @@ export default defineComponent({
     WaInput,
   },
   setup() {
+    const S = new Storage("local");
+    S.set("test", { name: "test" });
     const store = useStore();
     const router = useRouter();
     const formState = reactive({
@@ -50,10 +52,10 @@ export default defineComponent({
       formState.password = event;
     };
     const login = () => {
-      if (_.isEmpty(formState.account)) {
+      if (isEmpty(formState.account)) {
         return message.error("请输入邮箱账号");
       }
-      if (_.isEmpty(formState.password)) {
+      if (isEmpty(formState.password)) {
         return message.error("请输入密码");
       }
       store
