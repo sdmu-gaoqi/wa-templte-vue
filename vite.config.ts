@@ -1,15 +1,16 @@
-import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import { defineConfig } from "vite";
+import mkcert from "vite-plugin-mkcert";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
+  plugins: [vue(), vueJsx(), mkcert()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -19,6 +20,9 @@ export default defineConfig({
       components: path.resolve(__dirname, "src/components"),
       mocks: path.resolve(__dirname, "mocks"),
     },
+  },
+  server: {
+    https: true,
   },
   css: {
     preprocessorOptions: {

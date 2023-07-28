@@ -12,10 +12,6 @@ export default defineComponent({
   },
   setup(props) {
     storage.set("name", { content: "world" });
-    return () => (
-      <div>
-        <h1>......</h1>
-      </div>
-    );
+    return () => <div></div>;
   },
 });

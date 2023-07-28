@@ -2,7 +2,7 @@
   <div class="inputWrapper">
     <div class="lx-input-label" ref="label_ref" v-on:click="clickLabel">
       {{ props.label }}
-      <span ref="border_ref" className="lx-input-border"></span>
+      <span ref="border_ref" class="lx-input-border"></span>
     </div>
     <a-input
       :label="props.label"
@@ -10,7 +10,7 @@
       ref="input_ref"
       @focus="onFocus"
       @blur="onBlur"
-      @change="onChange"
+      @input="onChange"
       :type="type"
       :defaultValue="defaultValue"
     />
