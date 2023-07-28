@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 import mkcert from "vite-plugin-mkcert";
 import viteImagemin from "vite-plugin-imagemin";
 import postCssPxToRem from "postcss-pxtorem";
+import svgLoader from "vite-svg-loader";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,6 +16,9 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    svgLoader({
+      defaultImport: "component",
+    }),
     mkcert(),
     viteImagemin({
       gifsicle: {

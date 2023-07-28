@@ -1,5 +1,6 @@
 <template>
   <LoginCard>
+    <Sort />
     <div class="loginBox">
       <WaInput
         :value="formState.account"
@@ -27,6 +28,7 @@ import { message } from "ant-design-vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { Storage, isEmpty } from "wa-utils";
+import Sort from "../../assets/defaultsort.svg";
 
 export default defineComponent({
   components: {
