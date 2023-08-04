@@ -36,6 +36,7 @@ export default defineComponent({
     WaInput,
   },
   setup() {
+    console.log(Sort, "Sort");
     const S = new Storage("local");
     S.set("test", { name: "test" });
     const store = useStore();

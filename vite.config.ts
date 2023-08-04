@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import mkcert from "vite-plugin-mkcert";
 import viteImagemin from "vite-plugin-imagemin";
-import postCssPxToRem from "postcss-pxtorem";
+import postCssPxToRem from "wa-postcss-pxtorem";
 import svgLoader from "vite-svg-loader";
 
 const __filename = fileURLToPath(import.meta.url);
